@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+
+    <body>
+        <div id="contactList">
+            Contact List
+        
+        <% for(i of contact_list) {%>
+            <ul>
+                <li><%= i.name %></li>
+                <li><%= i.phone %></li>
+            </ul>
+            <% } %>
+        </div>
+
+            <form method="POST" action="/submit"  id="myForm" >
+
+                <label for="name">Name</label>
+                <input type="text" name="name"  placeholder="Enter the name ">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone"  placeholder="Enter the phone number">
+                <button type="submit">Submit</button>
+                
+            </form>
+            <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
