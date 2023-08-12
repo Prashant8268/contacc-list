@@ -3,10 +3,13 @@ const path = require('path');
 const axios = require('axios'); 
 const cors = require('cors');
 
-
+const db =require('./config/mongoose');
+const Contact = require('./models/contact');
 
 const app = express();
 app.use(express.json());
+
+
 
 app.use(express.static('assets'));
 
@@ -45,11 +48,28 @@ var contactList = [
     }
 ]
 
-app.get('/contact',(req,res)=>{
+app.get('/contact',async(req,res)=>{
+
+    const contact_list = await Contact.find();
 
     return res.render('./contact.ejs',{
-        contact_list : contactList
+        contact_list
     });
+})
+
+app.get('/delete/:id',async(req,res)=>{
+
+
+    try {
+        const check = await Contact.findByIdAndDelete(req.params.id);
+
+      } catch (error) {
+        console.error('Error:', error);
+      }
+
+  
+
+    return res.redirect('back');
 })
 
 
@@ -79,10 +99,22 @@ app.post('/submit',async (req, res) => {
 app.post('/create-contact',(req,res)=>{
 
     try {
-        console.log(req.body, 'form data received on server');
     
-        // Simulating saving contact data to a database
-        contactList.push(req.body);
+        // adding to databas         // 
+
+        // const contact = new Contact;
+        // contact.name = req.body.name;
+        // contact.phone = req.body.phone;
+
+        // contact.save();
+        // you can create as below 
+
+        Contact.create({
+            name:req.body.name,
+            phone:req.body.phone
+        })
+
+
 
         return  res.json({
             mesage:"Added Successfully"

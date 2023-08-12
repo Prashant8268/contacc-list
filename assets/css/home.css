@@ -1,3 +1,84 @@
 body{
+    /* text-align: center; */
+    background-image: linear-gradient(34deg,pink,silver
+    );
+}
+.main-continer{
+    position: fixed; /* Use 'fixed' or 'absolute' positioning */
+    top: 50%; /* Align to the vertical center */
+    left: 50%; /* Align to the horizontal center */
+    transform: translate(-50%, -50%); /* Move the div to the center */
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:pink;
+    width: 300px;
+    padding: 10px;
     text-align: center;
+    position: relative;
+    left: 40%;
+    border-radius: 6px;
+    box-shadow: 3px 3px rgb(91, 38, 214);
+    z-index: 4;
+    color: white;
+    background-image: radial-gradient(circle, rgb(138, 100, 228),rgb(110, 139, 225));
+}
+
+
+#list{
+    list-style-type: none; /* Remove default bullet points */
+    padding: 40px; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    border: 1px solid gray; /* Add border */
+    border-radius: 5px;
+    width: 20%;
+    position: relative;
+    border-radius: 10px;
+    border: 0;
+    background-image: repeating-linear-gradient(340deg,pink,rgb(248, 204, 204));
+    left: 40%;
+
+}
+.name{
+    margin: 5px;
+}
+
+.phone{
+    margin: 5px;
+}
+
+#logo{
+    margin-left: 5px;
+}
+#single-contact{
+    margin: 10px;
+    padding: 10px;
+}
+#myForm{
+    position: absolute;
+    margin-top: 20px;
+    left: 40%;
+}
+#form-heading{
+    margin-bottom: 10px;
+    color: black;
+    background-color: pink;
+    padding: 10px;
+    width: 320px;
+    border-radius: 4px;
+    background-image: radial-gradient(ellipse, rgb(244, 155, 196),rgb(224, 174, 248));
+}
+#myForm input{
+    /* display: block; */
+    width: 300px;
+    padding: 5px;
+
 }
